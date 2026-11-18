@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+</head>
+<body>
+
+    <h1>IPL Ticket Booking</h1>
+
+    <form>
+
+        <h2>Enter Your Booking Details</h2>
+
+        <!-- Name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name"
+               required minlength="3" maxlength="30">
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email"
+               required>
+        <br><br>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"
+               required minlength="10" maxlength="10"
+               pattern="[0-9]{10}">
+        <br><br>
+
+        <!-- Match Selection -->
+        <label for="match">Select Match:</label>
+        <select id="match" name="match" required>
+            <option value="">-- Select a Match --</option>
+            <option value="CSK vs MI">CSK vs MI</option>
+            <option value="RCB vs KKR">RCB vs KKR</option>
+            <option value="MI vs RCB">MI vs RCB</option>
+            <option value="CSK vs KKR">CSK vs KKR</option>
+        </select>
+        <br><br>
+
+        <!-- Stand Category -->
+        <label for="stand">Select Stand Category:</label>
+        <select id="stand" name="stand" required>
+            <option value="">-- Select Stand --</option>
+            <option value="General">General</option>
+            <option value="Premium">Premium</option>
+            <option value="VIP">VIP</option>
+        </select>
+        <br><br>
+
+        <!-- Number of Tickets -->
+        <label for="tickets">Number of Tickets:</label>
+        <input type="number" id="tickets" name="tickets"
+               required min="1" max="10">
+        <br><br>
+
+        <!-- Booking Preference -->
+        <p>Additional Booking Preference:</p>
+
+        <input type="radio" id="sms" name="preference" value="SMS">
+        <label for="sms">SMS Updates</label>
+
+        <input type="radio" id="emailUpdates" name="preference" value="Email">
+        <label for="emailUpdates">Email Updates</label>
+
+        <br><br>
+
+        <!-- Submit and Reset Buttons -->
+        <button type="submit">Submit Booking</button>
+        <button type="reset">Reset Form</button>
+
+    </form>
+
+</body>
+</html>
