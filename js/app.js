@@ -68,3 +68,71 @@ if (matchSelect && standSelect && ticketInput) {
 
     ticketInput.addEventListener("input", updateBookingSummary);
 }
+
+const teamFilter = document.getElementById("team");
+const matchCards = document.querySelectorAll(".match-card");
+
+if (teamFilter) {
+
+    teamFilter.addEventListener("change", function () {
+
+        const selectedTeam = teamFilter.value;
+
+        matchCards.forEach(function (card) {
+
+            const teams = card.dataset.teams.split(" ");
+
+            if (selectedTeam === "All" || teams.includes(selectedTeam)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        showToast("Match filter updated!");
+    });
+}
+
+const matchContainer = document.getElementById("match-container");
+const gridButton = document.getElementById("grid-view");
+const listButton = document.getElementById("list-view");
+
+if (matchContainer && gridButton && listButton) {
+
+    gridButton.addEventListener("click", function () {
+
+        matchContainer.classList.remove("list-view");
+
+        showToast("Grid view selected!");
+    });
+
+    listButton.addEventListener("click", function () {
+
+        matchContainer.classList.add("list-view");
+
+        showToast("List view selected!");
+    });
+}
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+if (menuToggle && navbar) {
+
+    menuToggle.addEventListener("click", function () {
+
+        navbar.classList.toggle("active");
+
+        showToast("Navigation menu toggled!");
+    });
+
+    navbar.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navbar.classList.remove("active");
+
+        });
+    });
+}
